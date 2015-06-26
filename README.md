@@ -8,6 +8,7 @@
 1. Ensure named is configured to write stats to a file when `rndc stats` is called.
 2. Copy bind9\_parse.py to /root.
 3. Add to root crontab (`crontab -u root -e`):
+
 	`*/5 * * * * /path/to/rndc stats;/root/bind9_parse.py < /path/to/named.stats >> /path/to/bind-request-count.log`
 
 ## Results
