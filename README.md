@@ -19,6 +19,7 @@ written to stdout in the format:
 
 ## Analysis
 ```$ bind9_analyze.pl < /path/to/bind-request-count.log > /path/to/analysis.log```
+
 This will analyze the logged data and provide a time-stamped report of how many requests were received per reporting
 interval and will end the report with the calculated requests-per-second.
 
