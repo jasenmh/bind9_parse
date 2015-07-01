@@ -11,11 +11,16 @@
 
 	`*/5 * * * * /path/to/rndc stats;/root/bind9_parse.py < /path/to/named.stats >> /path/to/bind-request-count.log`
 
-## Results
+## Logging
 Every 5 minutes, the script will parse the named stats file and track how many requests have been made. The result is
 written to stdout in the format:
 
 `<timestamp> <request_count>`
+
+## Analysis
+```$ bind9_analyze.pl < /path/to/bind-request-count.log > /path/to/analysis.log```
+This will analyze the logged data and provide a time-stamped report of how many requests were received per reporting
+interval and will end the report with the calculated requests-per-second.
 
 ## Heads Up
 Named stats get reset when the service restarts. To account for this, the script watches for a resetting of the request
